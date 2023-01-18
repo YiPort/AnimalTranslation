@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小叶の嗷呜/喵呜</title>
+    <link rel="shortcut icon" href="./css/images/favicon.ico">
+    <link href="./css/apps/styles.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div id="main-body" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="page-header">小叶の嗷呜/喵呜</h1>
+    <!--Start-->
+
+    <div class="">
+        <!--success-->
+        <div class="row">
+
+            <div class="col-12 col-lg-12" id="alert">
+                <div class="alert alert-success alert-dismissable hide" id="copy-alert" role="alert" style="display: none;"> 复制成功 </div>
+            </div>
+
+        </div>
+        <!--main-->
+        <div class="row">
+
+            <div class="col-12 col-lg-12">
+                <div class="form-group">
+                    <textarea class="form-control" id="text-decryped" placeholder="嗷呜的原文" rows="5"></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col-12 col-xs-6 col-lg-6 leftb">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary" onclick="encrypt()">嗷呜嗷呜</button>
+                    <button type="button" class="btn btn-warning" onclick="decrypt()">喵呜解惑</button>
+                </div>
+            </div>
+            <div class="col-12 col-xs-6 col-lg-6 button-cen">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="text-key" placeholder="红豆泥（选填，详情见帮助~）">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-12 col-lg-12">
+                <div class="form-group">
+                    <textarea class="form-control" id="text-encryped" placeholder="喵呜的答案" rows="7"></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div class="row lowroe">
+
+            <div class="col-4 col-xs-6 col-lg-2 leftb">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#aboutModal">这咋使用呢</button>
+            </div>
+            <div class="col-4 col-lg-8"> </div>
+            <div class="col-4 col-xs-6 col-lg-2 rightb">
+                <button type="button" class="btn btn-primary" onclick="copyUrl2()">复制</button>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">小叶课堂开课啦</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                </div>
+                <div class="modal-body">
+                    <p>Q：这是什么？</p>
+                    <p>A：加密工具</p>
+                    <p>Q：如何使用？</p>
+                    <p>A：嗷呜嗷呜（加密）：将原文输入在上方输入框，输入【红豆泥】（选填，但至少四个字，超过也只取前四个字，要注意顺序）即可得到【嗷呜嗷呜】（密文）；
+                        <br>喵呜解惑（解密）：将【嗷呜嗷呜】（密文）输入在上方，输入【红豆泥】（选填，但至少四个字，超过也只取前四个字，要注意顺序）即可得到原文。</p>
+                    <p>Q：为何无法得到原文</p>
+                    <p>A：原文已损坏，部分软件（百度贴吧）会自动转义繁体字或者特殊字体导致无法解读。另外，也请您自行确定原文完整程度。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">爱死你啦</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/apps/jquery.slim.min.js"></script>
+    <script src="./js/apps/main.js"></script>
+
+
+
+    <div id="row-alert" class="row margin-t-18" style="display: none;">
+        <div class="col-xs-12 col-sm-12">
+            <div class="alert alert-warning alert-dismissible fade in" role="alert" style="margin-bottom: 0px;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <span id="alert-message">...</span>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/bootstrap-notify.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+</div>
+</body>
+</html>
