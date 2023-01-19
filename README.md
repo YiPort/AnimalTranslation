@@ -18,4 +18,4 @@
 
 ### 页面展示
 
-![](./images/show.png)
+![](./images/show2.0.png)
