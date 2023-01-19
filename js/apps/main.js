@@ -13,19 +13,43 @@ String.prototype.replaceAll = function (s1, s2) {
 function encrypt() {
 	var msg = $("#text-decryped").val();
 	var key = $("#text-key").val();
+	var flag=false
 
 	if (msg.length < 1) {
 		$("#error-alert").show();
 		$("#copy-alert").hide();
-		$("#error-alert").text("请输入待【嗷呜】加密的明文");
+		$("#error-alert").text("请输入待【嗷呜】加密的【嗷呜】明文");
 	} else {
-		if (key.length < 4) {
+
+		if (key.length > 3){
+			let isSame=key.split("")
+			for (let i = 0; i < 3; i ++) {
+				for (let j = i+1; j < 4; j++) {
+					if (isSame[i] == isSame[j]){
+						flag=true
+						break
+					}
+				}
+				if (flag==true){
+					break
+				}
+			}
+
+		}
+		if (key.length<4){
 			key = password;
 		}
 
-		$("#text-encryped").val(encode(msg,key));
-		$("#error-alert").hide();
-		$("#copy-alert").hide();
+
+		if (flag == false){
+			$("#text-encryped").val(encode(msg,key));
+			$("#error-alert").hide();
+			$("#copy-alert").hide();
+		} else {
+			$("#error-alert").show();
+			$("#copy-alert").hide();
+			$("#error-alert").text("【红豆泥】的组成不能出现重复部分噢");
+		}
 	}
 
 }
@@ -33,16 +57,34 @@ function encrypt() {
 function decrypt() {
 	var msg = $("#text-decryped").val();
 	var key = $("#text-key").val();
+	var flag=false
 
 	if (msg.length < 1) {
 		$("#error-alert").show();
 		$("#copy-alert").hide();
-		$("#error-alert").text("请输入待【喵呜】解密的密文）");
-	}else {
-			if (key.length < 4) {
-				key = password;
+		$("#error-alert").text("请输入待【喵呜】解惑的【嗷呜】密文");
+	} else {
+
+		if (key.length > 3){
+			let isSame=key.split("")
+			for (let i = 0; i < 3; i ++) {
+				for (let j = i+1; j < 4; j++) {
+					if (isSame[i] == isSame[j]){
+						flag=true
+						break
+					}
+				}
+				if (flag==true){
+					break
+				}
 			}
 
+		}
+		if (key.length<4){
+			key = password;
+		}
+
+		if (flag == false){
 			try {
 				$("#error-alert").hide();
 				var str = decode(msg,key);
@@ -54,13 +96,20 @@ function decrypt() {
 				$("#text-encryped").val(str);
 
 			}
+		} else {
+			$("#error-alert").show();
+			$("#copy-alert").hide();
+			$("#error-alert").text("【红豆泥】的组成不能出现重复部分噢");
+		}
 
 
 
 		}
 
 
-}
+	}
+
+
 
 
 function copyUrl2() {
